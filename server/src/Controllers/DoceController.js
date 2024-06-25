@@ -35,9 +35,9 @@ class DoceController{
     }
 
     update(req,res){
-        const id_Doce = req.params.id_Doce;
+        const id_doce = req.params.id_doce;
         const nome = req.body.nome;
-        DoceModel.update(id_Doce,nome).then(
+        DoceModel.update(id_doce,nome).then(
             resposta =>{
             console.debug("Atualizando Doces")
             res.status(resposta[0]).json(resposta[1])
@@ -50,8 +50,8 @@ class DoceController{
         );
     }
     delete(req,res){
-        let id_Doce = req.params.index;
-        DoceModel.delete(id_Doce).then(
+        let id_doce = req.params.index;
+        DoceModel.delete(id_doce).then(
         resposta => {
             console.debug("Deletando Doce");
             res.status(resposta[0]).json(resposta[1]);
